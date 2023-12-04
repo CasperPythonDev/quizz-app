@@ -1,3 +1,17 @@
+import requests
+
+endpoint = "https://opentdb.com/api.php?amount=10&type=boolean"
+
+response = requests.get(endpoint)
+data = response.json()
+question_data = []
+for d in data["results"]:
+    question_data.append(d)
+print(question_data)
+# print(question_data)
+# print(type(data))
+# question_data = []
+"""
 question_data = [
     {
         "category": "Science: Computers",
@@ -100,3 +114,4 @@ question_data = [
         ]
     }
 ]
+"""
